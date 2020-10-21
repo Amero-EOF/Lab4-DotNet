@@ -177,3 +177,4 @@ C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Debug\netcoreapp3.1\Razor\Views\St
 C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Debug\netcoreapp3.1\Razor\Models\ViewModels\Index.cshtml.g.cs
