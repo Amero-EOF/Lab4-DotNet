@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/E5K9nLgRE2ceM4vA5AqMAAAAAACAAAAAAAQZgAAAAEAACAAAABGYLTfjN6mQ45YF/nQB+oXipPsTHJvi8mgoux5jdXiEgAAAAAOgAAAAAIAACAAAAAwhHA8EWpNz13oH3R2uym6whE2HHtpVCWWDL+8VSXw64AAAAAkjxZtC6PTNOZEDAUu9vsAXEQW9vsoIv0sihZrSQabyRjAfXW1fFllRedmPPA95e8bmFSEMnm6X/4t98M+t1c8IMrS5UxqWsISxjlP+hwpyg6nM6nztyN1FKEc8O5t44DgfGkTzEA6jz3t3cZWhFndaqL+9LpaVX4cAupo8n+DnUAAAADAutAzEzA+WYuzmfdBXYCGFaqQ/GbW638NDvnw2GnVKSl83sE17GQ6rYJubZpjsGiAnXZxaMDcgAKwzsBcdHNE</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=tcp:amerosqlserver.database.windows.net,1433%3bInitial Catalog=amero%3bPersist Security Info=False%3bUser ID=defr0023%3bPassword=Lexi0520%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="Lab4.Data.SchoolCommunityContext">
+      <Value>Server=tcp:amerosqlserver.database.windows.net,1433%3bInitial Catalog=amero%3bPersist Security Info=False%3bUser ID=defr0023%3bPassword=Lexi0520%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

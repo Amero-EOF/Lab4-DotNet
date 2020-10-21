@@ -23,10 +23,21 @@ namespace Lab4.Controllers
         }
 
         // GET: Communities
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string ID)
         {
             var viewModel = new CommunityViewModel();
-            viewModel.Communities = await _context.Community.ToListAsync();
+            viewModel.Communities = await _context.Communities
+                                    .Include(i => i.CommunityMemberships)
+                                    .ThenInclude(i => i.Student)
+                                    .AsNoTracking()
+                                    .OrderBy(i => i.Title)
+                                    .ToListAsync();
+            if (ID != null)
+            {
+                ViewData["CommunityID"] = ID;
+                // Grab the memberships equal to the id selected
+                viewModel.CommunityMemberships = viewModel.Communities.Where(x => x.ID == ID).Single().CommunityMemberships;
+            }
 
             return View(viewModel);
         }
@@ -38,31 +49,16 @@ namespace Lab4.Controllers
             {
                 return NotFound();
             }
-            dynamic models = new ExpandoObject(); 
-            models.Community = await _context.Community
+            Community community;
+            community = await _context.Communities
                 .FirstOrDefaultAsync(m => m.ID == id);
-            
-            List<CommunityMembership> communityMemberships = await _context.CommunityMembership.ToListAsync();
-            List<CommunityMembership> memberships = new List<CommunityMembership>();
-            foreach(var i  in communityMemberships) {
 
-                if (i.CommunityID == id)
-                {
-
-                    memberships.Add(i);
-                }
-            }
-            models.CurrentCommunityMembership = memberships;
-            if (models.CurrentCommunityMembership == null)
-            {
-                return NotFound();
-            }
-            if (models.Community == null)
+            if (community == null)
             {
                 return NotFound();
             }
             
-            return View(models);
+            return View(community);
         }
 
         // GET: Communities/Create
@@ -95,7 +91,7 @@ namespace Lab4.Controllers
                 return NotFound();
             }
 
-            var community = await _context.Community.FindAsync(id);
+            var community = await _context.Communities.FindAsync(id);
             if (community == null)
             {
                 return NotFound();
@@ -146,7 +142,7 @@ namespace Lab4.Controllers
                 return NotFound();
             }
 
-            var community = await _context.Community
+            var community = await _context.Communities
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (community == null)
             {
@@ -161,15 +157,15 @@ namespace Lab4.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var community = await _context.Community.FindAsync(id);
-            _context.Community.Remove(community);
+            var community = await _context.Communities.FindAsync(id);
+            _context.Communities.Remove(community);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool CommunityExists(string id)
         {
-            return _context.Community.Any(e => e.ID == id);
+            return _context.Communities.Any(e => e.ID == id);
         }
     }
 }

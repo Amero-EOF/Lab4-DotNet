@@ -32,7 +32,7 @@ namespace Lab4.Models
             } 
         }
 
-        public Community Community { get; set; }
+        public ICollection<CommunityMembership> CommunityMembership { get; set; }
 
         // Fix for "Unable to determine the relationship represented by navigation property 'CommunityMembership.Student' of type 'Student'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute"
     }

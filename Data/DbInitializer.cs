@@ -12,7 +12,7 @@ namespace Lab4.Data
         {
             context.Database.EnsureCreated();
 
-            if (context.Student.Any())
+            if (context.Students.Any())
             {
                 return;   // DB has been seeded
             }
@@ -26,7 +26,7 @@ namespace Lab4.Data
             };
             foreach (Student s in students)
             {
-                context.Student.Add(s);
+                context.Students.Add(s);
             }
             context.SaveChanges();
 
@@ -38,7 +38,7 @@ namespace Lab4.Data
             };
             foreach (Community c in communities)
             {
-                context.Community.Add(c);
+                context.Communities.Add(c);
             }
             context.SaveChanges();
 
@@ -53,7 +53,7 @@ namespace Lab4.Data
             };
             foreach (var m in memberships)
             {
-                context.CommunityMembership.Add(m);
+                context.CommunityMemberships.Add(m);
             }
             context.SaveChanges();
 

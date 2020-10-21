@@ -21,6 +21,7 @@
                     @Html.DisplayFor(modelItem => item.Budget)
                 </td>
                 <td>
+                    <a asp-action="Index" asp-route-id="@item.ID">Select</a> |
                     <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
@@ -29,3 +30,38 @@
         }
     </tbody>
 </table>
+
+@if (Model.CommunityMemberships != null)
+{
+    <h1>Members of the community</h1>
+    <table class="table">
+        <tbody>
+
+            @if (Model.CommunityMemberships.Count() != 0)
+            {
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                </tr>
+                @foreach (var item in Model.CommunityMemberships)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student.FullName)
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <th>
+                        No membership record exist
+                    </th>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
