@@ -1,0 +1,36 @@
+﻿@model dynamic
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+@{Lab4.Models.Community newCommunity = Model.Community;}
+<div>
+    <h4>Community</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+
+            @Html.DisplayNameFor(m => newCommunity.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => newCommunity.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => newCommunity.Budget)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => newCommunity.Budget)
+        </dd>
+    </dl>
+    <h4>Student ID's in Community </h4>
+    @foreach (var objs in Model.CurrentCommunityMembership)
+    {
+        <text>@objs.StudentID</text>
+    }
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@newCommunity.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
