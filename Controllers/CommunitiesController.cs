@@ -25,17 +25,20 @@ namespace Lab4.Controllers
         // GET: Communities
         public async Task<IActionResult> Index(string ID)
         {
+            // grab our created CommunityView model so that we can merge two models together, that we can send to our view.W
             var viewModel = new CommunityViewModel();
-            viewModel.Communities = await _context.Communities
-                                    .Include(i => i.CommunityMemberships)
-                                    .ThenInclude(i => i.Student)
-                                    .AsNoTracking()
-                                    .OrderBy(i => i.Title)
-                                    .ToListAsync();
+            
+            viewModel.Communities = await _context.Communities // promise that we will return a list/non-generic collection when the time.
+                                    .Include(i => i.CommunityMemberships) // self explanatory.
+                                    .ThenInclude(i => i.Student) // self explanatory.
+                                    .AsNoTracking() // disable tracking because we want a read-only table.
+                                    .OrderBy(i => i.Title) // self explanatory.
+                                    .ToListAsync(); // convert communities to a List after finishing our queries, otherwise we're stuck with a IQueryable type
             if (ID != null)
             {
-                ViewData["CommunityID"] = ID;
-                // Grab the memberships equal to the id selected
+                // ViewData["CommunityID"] = ID;
+                // Grab the community equal to the id selected having only one commmunity. If there's more it doesn't make any sense because
+                // you should not have more than one community with the same ID. Then grabs the communities membership property/data member.
                 viewModel.CommunityMemberships = viewModel.Communities.Where(x => x.ID == ID).Single().CommunityMemberships;
             }
 

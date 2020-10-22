@@ -177,7 +177,6 @@ C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Debug\netcoreapp3.1\Razor\Views\St
 C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Debug\netcoreapp3.1\Razor\Models\ViewModels\Index.cshtml.g.cs
 C:\Users\crushmero\source\repos\Lab4\Lab4\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.AmeroLab4 - Web Deploy.json
 C:\Users\crushmero\source\repos\Lab4\Lab4\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
 C:\Users\crushmero\source\repos\Lab4\Lab4\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\AmeroLab4 - Web Deploy\mssql1.arm.json

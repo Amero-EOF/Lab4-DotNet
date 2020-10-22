@@ -153,7 +153,6 @@ C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Release\netcoreapp3.1\Lab4.RazorAs
 C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Release\netcoreapp3.1\Lab4.TagHelpers.input.cache
 C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Release\netcoreapp3.1\Lab4.TagHelpers.output.cache
 C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Release\netcoreapp3.1\Lab4.RazorCoreGenerate.cache
-C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Release\netcoreapp3.1\Razor\Models\ViewModels\Index.cshtml.g.cs
 C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Release\netcoreapp3.1\Razor\Views\Communities\Create.cshtml.g.cs
 C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Release\netcoreapp3.1\Razor\Views\Communities\Delete.cshtml.g.cs
 C:\Users\crushmero\source\repos\Lab4\Lab4\obj\Release\netcoreapp3.1\Razor\Views\Communities\Details.cshtml.g.cs
